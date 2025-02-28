@@ -1,6 +1,10 @@
 # Azure AI Agent Tutorial
 
-This repository demonstrates how to build an Azure AI Agent that uses the Bing Search API to fetch news articles and stores the results in Azure Blob Storage with a timestamped filename. The tutorial also guides you through setting up Azure AI Studio, deploying a model (e.g., GPT-4o-mini), and testing agents in the Agent Playground.
+This repository demonstrates how to build an Agent with the Azure AI Agent Service.
+
+Our agent uses the Bing Search API to fetch news articles and stores the results in Azure Blob Storage with a timestamped filename. 
+
+The tutorial also guides you through setting up Azure AI Foundry, deploying a model (e.g., GPT-4o-mini), and testing agents in the Agent Playground.
 
 > **Note:** This tutorial has been tested with Python **3.11.5** and is configured for the **sweden_central** region.
 
@@ -9,7 +13,7 @@ This repository demonstrates how to build an Azure AI Agent that uses the Bing S
 ## Table of Contents
 
 - [Setup and Prerequisites](#setup-and-prerequisites)
-- [Azure AI Studio and Model Deployment](#azure-ai-studio-and-model-deployment)
+- [Azure AI Foundry and Model Deployment](#azure-ai-Foundry-and-model-deployment)
 - [Azure Resources Setup](#azure-resources-setup)
 - [Repository Setup and Environment](#repository-setup-and-environment)
 - [Running and Testing the Code](#running-and-testing-the-code)
@@ -30,23 +34,30 @@ This repository demonstrates how to build an Azure AI Agent that uses the Bing S
    az login --tenant <your-tenant-id>
    ```
 
+   You can check if you are logged into by executing 
+   ```bash
+   az account list --output table
+   ```
+
 3. **Git:**  
    Make sure Git is installed to clone the repository.
 
 ---
 
-## Azure AI Studio and Model Deployment
+## Azure AI Foundry and Model Deployment
 
-1. **Azure AI Studio Setup:**  
-   - Set up Azure AI Studio with your Hub and Project.
+1. **Azure AI Foundry Setup:**  
+   - Login to Azure Portal and set up Azure AI Foundry with your Hub and Project.
    - Deploy at least one model (e.g., **GPT-4o-mini**). If you use a different model, adjust the name accordingly.
    - Use **sweden_central** for testing.
    - Once deployed, play in the playground by chatting with your model and executing agents in the Agent Playground.
 
 2. **Deploying a Model:**  
-   - In Azure AI Studio, navigate to your workspace.
-   - Deploy your model (e.g., GPT-4o-mini) following the standard deployment process.
+   - In Azure AI Foundry, navigate to your workspace and create a hub and a project.
+   - Deploy your model (e.g., GPT-4o-mini) with Global Standard following the deployment wizard.
    - Verify that the model is active and available for testing in the playground.
+
+![Azure AI Foundry Model Deployment](00-resources/images/azureaifoundrymodeldeployment.png)
 
 ---
 
@@ -63,10 +74,13 @@ Before turning to the code, ensure you have the following Azure resources ready:
    - Copy the connection string from your Blob Storage account.
 
 3. **Azure AI Project Connection:**  
-   - Obtain your Azure AI Project connection string from Azure AI Studio.
+   - Obtain your Azure AI Project connection string from Azure AI Foundry.
    - Copy this connection string for later use in the code.
 
 ---
+
+![Azure AI Foundry Connection String](00-resources/images/foundryconnectionstring.png)
+
 
 ## Repository Setup and Environment
 
@@ -109,7 +123,7 @@ Before turning to the code, ensure you have the following Azure resources ready:
    After running the code, verify that a new file with a timestamp (e.g., `news_YYYYMMDD_HHMMSS.json`) is created in your designated Blob Storage container.
 
 3. **Agent Playground:**  
-   Once your agent is running in Azure AI Studio, interact with it in the Agent Playground by sending messages and executing available tools.
+   Once your agent is running in Azure AI Foundry, interact with it in the Agent Playground by sending messages and executing available tools.
 
 ---
 
