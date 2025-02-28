@@ -70,8 +70,10 @@ Before turning to the code, ensure you have the following Azure resources ready:
    - Obtain the API key from the resource and copy it.
 
 2. **Azure Blob Storage:**  
-   - Create an Azure Blob Storage account.
+   - Create a new Azure Storage account (Data Lake Gen2). Do not use the one that comes with Azure AI Foundry.
    - Copy the connection string from your Blob Storage account.
+
+![Storage Account Connection String](00-resources/images/storageaccount.png)
 
 3. **Azure AI Project Connection:**  
    - Obtain your Azure AI Project connection string from Azure AI Foundry.
